@@ -1,0 +1,31 @@
+/* Contenedor principal para todos los botones de reacción */
+.emoji-reactions-container {
+    margin-top: 20px; /* Espacio por encima del contenedor */
+    padding-top: 10px; /* Espacio interno por encima de los botones */
+    border-top: 1px solid #eee; /* Línea divisoria sutil */
+}
+
+/* Estilo para cada botón de reacción individual */
+.emoji-reaction-button {
+    background: #f0f0f0; /* Fondo gris claro */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 5px 10px; /* Relleno interno */
+    cursor: pointer; /* Cambia el cursor a una mano para indicar que es clickeable */
+    margin-right: 5px; /* Espacio a la derecha de cada botón */
+    font-size: 18px; /* Tamaño del emoji */
+    transition: all 0.2s ease-in-out; /* Transición suave para efectos */
+}
+
+/* Efecto al pasar el ratón por encima del botón */
+.emoji-reaction-button:hover {
+    background: #e0e0e0; /* Fondo ligeramente más oscuro */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño del botón */
+}
+
+/* Estilo para el contador numérico de reacciones */
+.emoji-reaction-count {
+    margin-left: 2px; /* Pequeño espacio entre el emoji y el número */
+    font-size: 12px; /* Tamaño de fuente más pequeño para el número */
+    color: #555; /* Color de texto gris oscuro */
+}
