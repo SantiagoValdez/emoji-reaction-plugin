@@ -1,0 +1,27 @@
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración de IDEs y editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de log
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencias (si se usaran en el futuro)
+node_modules/
+vendor/
+
+# Archivos de compilación y paquetes
+*.zip
+*.tar.gz
+
+# Archivos sensibles de WordPress (no deberían estar aquí, pero por si acaso)
+wp-config.php
+.env
