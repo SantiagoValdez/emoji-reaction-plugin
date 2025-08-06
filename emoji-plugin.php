@@ -2,8 +2,8 @@
 /**
  * Plugin Name:       Emoji Reactions
  * Description:       Permite a los visitantes reaccionar a los posts con una selección de emojis configurables.
- * Version:           1.2.0
- * Author:            Santi/Gemini
+ * Version:           1.2.1
+ * Author:            Santiago Valdez <santiagovaldez@groupweird.com>
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       emoji-reactions

@@ -1,66 +1,70 @@
-# Emoji Reactions WordPress Plugin
+# Plugin de WordPress: Emoji Reactions
 
-A simple and modern WordPress plugin that allows visitors to react to your posts with a configurable set of emojis. Reaction counts are stored and updated in real-time via AJAX.
+Un plugin para WordPress simple y moderno que permite a los visitantes reaccionar a tus posts con un conjunto de emojis configurables. Los contadores de reacciones se almacenan y actualizan en tiempo real mediante AJAX.
 
-![Plugin Screenshot](https://i.imgur.com/YOUR_SCREENSHOT_URL.png) <!-- You can replace this with a real screenshot URL -->
+## ✨ Características
 
-## ✨ Features
-
-- **Configurable Emojis**: Define your own set of emojis from the settings page.
-- **AJAX Powered**: Users can react without reloading the page for a smooth experience.
-- **Custom Database Table**: Efficiently stores reaction counts.
-- **Clean Uninstall**: Removes all its data (options and custom table) upon deletion, leaving your database clean.
-- **Easy Setup**: Activate, configure, and you're ready to go.
-- **Dockerized Environment**: Includes a `docker-compose.yaml` for quick and easy local development.
+- **Emojis Configurables**: Define tu propio conjunto de emojis desde la página de ajustes.
+- **Potenciado por AJAX**: Los usuarios pueden reaccionar sin recargar la página para una experiencia fluida.
+- **Tabla de Base de Datos Personalizada**: Almacena los contadores de reacciones de forma eficiente.
+- **Desinstalación Limpia**: Elimina todos sus datos (opciones y tabla personalizada) al ser borrado, dejando tu base de datos limpia.
+- **Configuración Fácil**: Activa, configura y listo.
+- **Entorno Dockerizado**: Incluye un `docker-compose.yaml` para un desarrollo local rápido y sencillo.
 
 ---
 
-## 🚀 Local Development & Testing
+## 🚀 Desarrollo y Pruebas en Local
 
-This project includes a Docker Compose setup to spin up a WordPress instance with the plugin already mounted.
+Este proyecto incluye una configuración de Docker Compose para levantar una instancia de WordPress con el plugin ya montado.
 
-**Prerequisites:**
+**Prerrequisitos:**
 *   [Docker](https://www.docker.com/get-started)
 *   [Docker Compose](https://docs.docker.com/compose/install/)
 
-**Steps:**
+**Pasos:**
 
-1.  **Clone the repository:**
+1.  **Clona el repositorio:**
     ```bash
-    git clone https://github.com/your-username/emoji-plugin.git
+    git clone https://github.com/tu-usuario/emoji-plugin.git
     cd emoji-plugin
     ```
 
-2.  **Start the environment:**
+2.  **Inicia el entorno:**
     ```bash
     docker-compose up -d
     ```
 
-3.  **Access WordPress:**
-    *   Open your browser and go to `http://localhost:8080`.
-    *   Follow the on-screen instructions to complete the WordPress installation.
+3.  **Accede a WordPress:**
+    *   Abre tu navegador y ve a `http://localhost:8080`.
+    *   Sigue las instrucciones en pantalla para completar la instalación de WordPress.
 
-4.  **Activate the Plugin:**
-    *   Log in to your new WordPress admin panel.
-    *   Navigate to **Plugins**.
-    *   **Emoji Reactions** will be in the list. Click **Activate**.
+4.  **Activa el Plugin:**
+    *   Inicia sesión en tu nuevo panel de administración de WordPress.
+    *   Navega a **Plugins**.
+    *   **Emoji Reactions** estará en la lista. Haz clic en **Activar**.
 
-5.  **Configure:**
-    *   Go to **Settings > Emoji Reactions** to customize the available emojis.
+5.  **Configura:**
+    *   Ve a **Ajustes > Emoji Reactions** para personalizar los emojis disponibles.
 
-When you're done, you can stop the containers with `docker-compose down`.
-
----
-
-## 📦 Installation in Production
-
-1.  Download the latest release ZIP file from the [releases page](https://github.com/your-username/emoji-plugin/releases).
-2.  In your WordPress admin panel, go to **Plugins > Add New > Upload Plugin**.
-3.  Upload the ZIP file and activate the plugin.
-4.  Navigate to **Settings > Emoji Reactions** to configure the allowed emojis.
+Cuando termines, puedes detener los contenedores con `docker-compose down`.
 
 ---
 
-## 📄 License
+## 📦 Instalación en Producción
 
-This plugin is licensed under the [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html).
+1.  Descarga el archivo ZIP de la última versión desde la [página de releases](https://github.com/tu-usuario/emoji-plugin/releases).
+2.  En tu panel de administración de WordPress, ve a **Plugins > Añadir nuevo > Subir Plugin**.
+3.  Sube el archivo ZIP y activa el plugin.
+4.  Navega a **Ajustes > Emoji Reactions** para configurar los emojis permitidos.
+
+---
+
+## ✍️ Autor
+
+*   **Santiago Valdez** - <santiagovaldez@groupweird.com>
+
+---
+
+## 📄 Licencia
+
+Este plugin está licenciado bajo la [GPLv2 o posterior](https://www.gnu.org/licenses/gpl-2.0.html).

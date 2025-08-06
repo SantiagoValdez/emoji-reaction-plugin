@@ -1,5 +1,5 @@
 === Emoji Reactions ===
-Contributors: santi-gemini
+Contributors: Santiago Valdez <santiagovaldez@groupweird.com>
 Tags: reactions, emoji, engagement, posts, ajax
 Requires at least: 5.0
 Tested up to: 6.5
