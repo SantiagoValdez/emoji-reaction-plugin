@@ -7,9 +7,9 @@ Un plugin para WordPress simple y moderno que permite a los visitantes reacciona
 - **Emojis Configurables**: Define tu propio conjunto de emojis desde la página de ajustes.
 - **Potenciado por AJAX**: Los usuarios pueden reaccionar sin recargar la página para una experiencia fluida.
 - **Tabla de Base de Datos Personalizada**: Almacena los contadores de reacciones de forma eficiente.
-- **Desinstalación Limpia**: Elimina todos sus datos (opciones y tabla personalizada) al ser borrado, dejando tu base de datos limpia.
-- **Configuración Fácil**: Activa, configura y listo.
+- **Desinstalación Limpia**: Elimina todos sus datos (opciones y tabla personalizada) al ser borrado.
 - **Entorno Dockerizado**: Incluye un `docker-compose.yaml` para un desarrollo local rápido y sencillo.
+- **Scripts de Despliegue**: Automatización para empaquetar el plugin y publicarlo en el repositorio de WordPress.org.
 
 ---
 
@@ -23,39 +23,59 @@ Este proyecto incluye una configuración de Docker Compose para levantar una ins
 
 **Pasos:**
 
-1.  **Clona el repositorio:**
-    ```bash
-    git clone https://github.com/tu-usuario/emoji-plugin.git
-    cd emoji-plugin
-    ```
+1.  **Clona el repositorio.**
+2.  **Inicia el entorno:** `docker-compose up -d`
+3.  **Accede a WordPress:** Abre tu navegador y ve a `http://localhost:8080` para completar la instalación.
+4.  **Activa el Plugin:** En el panel de admin, ve a **Plugins** y activa **Emoji Reactions**.
+5.  **Configura:** Ve a **Ajustes > Emoji Reactions** para personalizar los emojis.
 
-2.  **Inicia el entorno:**
-    ```bash
-    docker-compose up -d
-    ```
-
-3.  **Accede a WordPress:**
-    *   Abre tu navegador y ve a `http://localhost:8080`.
-    *   Sigue las instrucciones en pantalla para completar la instalación de WordPress.
-
-4.  **Activa el Plugin:**
-    *   Inicia sesión en tu nuevo panel de administración de WordPress.
-    *   Navega a **Plugins**.
-    *   **Emoji Reactions** estará en la lista. Haz clic en **Activar**.
-
-5.  **Configura:**
-    *   Ve a **Ajustes > Emoji Reactions** para personalizar los emojis disponibles.
-
-Cuando termines, puedes detener los contenedores con `docker-compose down`.
+Para detener el entorno, usa `docker-compose down`.
 
 ---
 
-## 📦 Instalación en Producción
+## steps_to_publish_to_wordpress_org
 
-1.  Descarga el archivo ZIP de la última versión desde la [página de releases](https://github.com/tu-usuario/emoji-plugin/releases).
-2.  En tu panel de administración de WordPress, ve a **Plugins > Añadir nuevo > Subir Plugin**.
-3.  Sube el archivo ZIP y activa el plugin.
-4.  Navega a **Ajustes > Emoji Reactions** para configurar los emojis permitidos.
+Publicar tu plugin en el repositorio oficial de WordPress.org requiere seguir unos pasos específicos. Estos scripts te ayudarán a automatizar gran parte del proceso.
+
+### Paso 1: Preparar los Recursos Gráficos (Assets)
+
+WordPress.org muestra un icono y un banner para tu plugin. Debes crearlos y colocarlos en la carpeta `/assets`:
+
+- **Icono:** `assets/icon-256x256.png` (o .jpg)
+- **Banner:** `assets/banner-772x250.png` (o .jpg)
+- **Capturas de pantalla:** `assets/screenshot-1.png`, `assets-screenshot-2.png`, etc.
+
+### Paso 2: Empaquetar el Plugin para la Revisión Inicial
+
+Antes de que te den acceso a SVN, debes enviar un archivo `.zip` para que el equipo de WordPress revise tu plugin.
+
+1.  Asegúrate de que los scripts son ejecutables:
+    ```bash
+    chmod +x build-zip.sh
+    ```
+2.  Ejecuta el script de compilación:
+    ```bash
+    ./build-zip.sh
+    ```
+3.  Esto creará un archivo `emoji-plugin.zip`. Súbelo en la página [Add Your Plugin](https://wordpress.org/plugins/developers/add/).
+
+### Paso 3: Desplegar una Nueva Versión (Una vez aprobado)
+
+Cuando tu plugin sea aprobado, recibirás acceso a un repositorio SVN. Para subir nuevas versiones:
+
+1.  **Clona tu repositorio SVN**: La primera vez, clona el repositorio que te asignen en una carpeta fuera de este proyecto. Por ejemplo:
+    ```bash
+    svn co https://plugins.svn.wordpress.org/emoji-plugin/ wp-svn/emoji-plugin
+    ```
+2.  **Configura el script de despliegue**: Abre `deploy-svn.sh` y cambia la variable `SVN_PATH` para que apunte a la carpeta que acabas de clonar.
+3.  **Actualiza la versión**: Antes de desplegar, asegúrate de incrementar el número de versión en `readme.txt` (en la línea `Stable tag`) y en la cabecera de `emoji-plugin.php`.
+4.  **Ejecuta el script de despliegue**:
+    ```bash
+    chmod +x deploy-svn.sh
+    ./deploy-svn.sh
+    ```
+
+El script se encargará de copiar los archivos, crear la etiqueta de la nueva versión y subir todo al repositorio de WordPress.org.
 
 ---
 
